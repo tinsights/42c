@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SOURCES = ft_isdigit.c ft_isalpha.c ft_isalnum.c
+SOURCES = *.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -11,8 +11,8 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar -crs $(NAME) $(OBJECTS)
 
-%.o: %.c
-	cc $(CFLAGS) $< -c
+$(OBJECTS): $(SOURCES)
+	cc $(CFLAGS) -c $(SOURCES)
 
 clean:
 	rm -f $(OBJECTS)
