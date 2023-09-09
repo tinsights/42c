@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjegades <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 16:19:34 by tjegades          #+#    #+#             */
-/*   Updated: 2023/09/08 16:19:35 by tjegades         ###   ########.fr       */
+/*   Created: 2023/09/09 11:21:01 by tjegades          #+#    #+#             */
+/*   Updated: 2023/09/09 11:21:01 by tjegades         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int	ft_isalpha(char c);
-int	ft_isdigit(char c);
-int	ft_isalnum(char c);
-
-#endif
+int	ft_isalnum(char c)
+{
+	return (ft_isalpha(c) || ft_isdigit(c));
+}
