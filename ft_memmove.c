@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjegades <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 13:03:21 by tjegades          #+#    #+#             */
-/*   Updated: 2023/09/09 13:03:22 by tjegades         ###   ########.fr       */
+/*   Created: 2023/09/09 15:09:49 by tjegades          #+#    #+#             */
+/*   Updated: 2023/09/09 15:09:50 by tjegades         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	if (src < dest && src + n > dest)
+	{
+		dest += n;
+		src += n;
+		while (n--)
+			*(char *)(--dest) = *(char *)(--src);
+	}
+	else
+		ft_memcpy(dest, src, n);
+	return (dest);
 }
