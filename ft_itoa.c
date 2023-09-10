@@ -9,36 +9,25 @@
 /*   Updated: 2023/09/10 15:48:50 by tjegades         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include "libft.h"
 
 char	*ft_itoa(int n)
 {
+	char	temp[12];
 	int		len;
-	long	copy;
-	char	*result;
 
-	len = 1 + (n < 0);
-	copy = (n >= 0) * n + (n < 0) * -1 * (long) n;
-	while (copy >= 10)
+	if (!n)
+		return (ft_strdup("0\0"));
+	temp[11] = '\0';
+	len = 0;
+	while (n)
 	{
 		len++;
-		copy /= 10;
+		temp[11 - len] = ((n < 0) * -1 * (n % 10) + (n > 0) * (n % 10)) + 48;
+		if (n < 0 && !(n / 10))
+			temp[10 - len++] = '-';
+		n /= 10;
 	}
-	result = malloc(len + 1);
-	if (!result)
-		return (NULL);
-	result[len] = 0;
-	copy = (n >= 0) * n + (n < 0) * -1 * (long) n;
-	if (!copy)
-		result[0] = 48;
-	while (copy > 0)
-	{
-		result[len - 1] = copy % 10 + 48;
-		copy /= 10;
-		len--;
-	}
-	if (n && len)
-		result[0] = '-';
-	return result;
+	return (ft_strdup(temp + 11 - len));
 }
