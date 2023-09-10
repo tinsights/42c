@@ -17,8 +17,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	char	*result;
 	int		numbytes;
 
-	if (!size || !nmemb)
-		return (0);
 	numbytes = (int)nmemb * (int)size;
 	result = malloc(numbytes);
 	if (result)

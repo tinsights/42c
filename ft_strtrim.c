@@ -19,15 +19,15 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*result;
 	int		len;
 
-	while (is_sep(*s1, set))
+	while (*s1 && is_sep(*s1, set))
 		s1++;
 	len = ft_strlen(s1);
-	while (is_sep(*(s1 + len - 1), set))
+	while (len && is_sep(*(s1 + len - 1), set))
 		len--;
 	result = malloc(len + 1);
-	result[len] = 0;
 	if (!result)
 		return (NULL);
+	result[len] = 0;
 	ft_memcpy(result, s1, len);
 	return (result);
 }

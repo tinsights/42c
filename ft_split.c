@@ -45,7 +45,9 @@ int	count_separators(char const *s, char c)
 {
 	int	count;
 
-	while (*s == c)
+	if (*s && !c)
+		return (1);
+	while (c && *s == c)
 		s++;
 	count = 0;
 	if (*s)
