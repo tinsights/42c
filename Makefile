@@ -35,18 +35,34 @@ SOURCES = ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c 
 
+BONUSSRCS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJECTS = $(SOURCES:.c=.o)
+BONUSOBJS = $(BONUSSRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar -crs $(NAME) $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
 $(OBJECTS): $(SOURCES)
 	cc $(CFLAGS) -c $(SOURCES)
+
+bonus: $(BONUSOBJS)
+	ar rcs $(NAME) $(BONUSOBJS)
+
+$(BONUSOBJS): $(BONUSSRCS)
+	cc $(CFLAGS) -c $(BONUSSRCS)
 
 clean:
 	rm -f $(OBJECTS)
