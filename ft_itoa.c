@@ -16,18 +16,22 @@ char	*ft_itoa(int n)
 {
 	char	temp[12];
 	int		len;
+	int		copy;
 
 	if (!n)
 		return (ft_strdup("0\0"));
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
 	temp[11] = '\0';
 	len = 0;
-	while (n)
+	copy = (n < 0) * -1 * n + (n > 0) * n;
+	while (copy)
 	{
 		len++;
-		temp[11 - len] = ((n < 0) * -1 * (n % 10) + (n > 0) * (n % 10)) + 48;
-		if (n < 0 && !(n / 10))
-			temp[10 - len++] = '-';
-		n /= 10;
+		temp[11 - len] = copy % 10 + 48;
+		copy /= 10;
 	}
+	if (n < 0)
+		temp[10 - len++] = '-';
 	return (ft_strdup(temp + 11 - len));
 }
