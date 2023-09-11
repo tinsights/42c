@@ -1,4 +1,4 @@
 [submodule "libft"]
 	path = libft
-	url = https://github.com/tinsights/42c
-	branch = libft
+	url = https://github.com/tinsights/42clibft
+	branch = main
