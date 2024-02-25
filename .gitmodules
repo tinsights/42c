@@ -5,3 +5,15 @@
 [submodule "printf"]
 	path = printf
 	url = https://github.com/tinsights/42c-printf
+[submodule "get_next_line"]
+	path = get_next_line
+	url = git@github.com:tinsights/42c-get_next_line.git
+[submodule "fractol"]
+	path = fractol
+	url = git@github.com:tinsights/42c-fractol.git
+[submodule "push_swap"]
+	path = push_swap
+	url = git@github.com:tinsights/42c-push_swap.git
+[submodule "pipex"]
+	path = pipex
+	url = git@github.com:tinsights/42c-pipex.git
