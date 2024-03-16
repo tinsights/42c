@@ -17,3 +17,6 @@
 [submodule "pipex"]
 	path = pipex
 	url = git@github.com:tinsights/42c-pipex.git
+[submodule "philo"]
+	path = philo
+	url = git@github.com:tinsights/42c-philo.git
