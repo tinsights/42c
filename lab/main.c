@@ -5,12 +5,12 @@
 
 int main (void)
 {
-    int pid = fork();
-    // int fd[2];
+    int pipe_fd[2];
 
-    int fd = open("file1.txt", O_RDWR | O_CREAT, 0777);
-    dup2(fd, STDOUT_FILENO);
+    pipe(pipe_fd);
+
+    dup2(STDOUT_FILENO, pipe_fd[0]);
+    dup2(pipe_fd[0], STDOUT_FILENO);
 
     printf("hello world\n");
-    
 }
