@@ -20,3 +20,18 @@
 [submodule "philo"]
 	path = philo
 	url = git@github.com:tinsights/42c-philo.git
+[submodule "minishell"]
+	path = minishell
+	url = git@github.com:tinsights/42c-minishell.git
+[submodule "42c-cpp02"]
+	path = 42c-cpp02
+	url = git@github.com:tinsights/42c-cpp02.git
+[submodule "cpp/42c-cpp06"]
+	path = cpp/42c-cpp06
+	url = https://github.com/tinsights/42c-cpp06
+[submodule "cpp/42c-cpp07"]
+	path = cpp/42c-cpp07
+	url = git@github.com:tinsights/42c-cpp07.git
+[submodule "cpp/42c-cpp08"]
+	path = cpp/42c-cpp08
+	url = git@github.com:tinsights/42c-cpp08.git
